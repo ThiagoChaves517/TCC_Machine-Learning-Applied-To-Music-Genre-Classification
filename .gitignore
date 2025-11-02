@@ -1,3 +1,11 @@
+# VS Code
+.vscode
+
+# FMA Datasets
+fma_datasets
+
+# FMA Metadata
+fma_metadata
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

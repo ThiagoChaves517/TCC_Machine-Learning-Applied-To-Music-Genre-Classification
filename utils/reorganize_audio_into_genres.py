@@ -6,7 +6,7 @@ import pandas as pd
 
 # Path to the FMA metadata and audio files
 METADATA_DIR = 'fma_metadata'  # Folder which has the tracks.csv file (248.4 MB), which lists all the FMA Dataset tracks into columns. The track files in the chosen AUDIO_DIR will be rearrenged according to their genres in tracks.csv
-AUDIO_DIR = 'fma_medium'       # Select the desired dataset of tracks from FMA. They may be: fma_small | fma_medium | fma_large | fma_full
+AUDIO_DIR = 'fma_small'       # Select the desired dataset of tracks from FMA. They may be: fma_small | fma_medium | fma_large | fma_full
 
 def load_tracks(filepath):
     """Loads the tracks metadata from a CSV file."""
@@ -23,7 +23,7 @@ def reorganize_audio_by_genre(audio_dir, tracks_df):
     Reorganizes audio files into folders named by their top-level genre.
     """
     # Create a new directory for the genre-sorted audio files
-    output_dir = os.path.join(os.path.dirname(audio_dir), 'fma_medium_genres')  # Name of the new folder with rearrenged tracks.
+    output_dir = os.path.join(os.path.dirname(audio_dir), 'fma_small_genres')  # Name of the new folder with rearrenged tracks.
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
