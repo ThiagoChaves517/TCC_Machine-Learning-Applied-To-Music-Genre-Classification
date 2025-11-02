@@ -6,10 +6,7 @@ def extract_features(file_path):
     try:
         # Carrega o áudio: mono=True, sr=None (mantém a taxa original)
         # O utils.py do FMA usa sr=None
-        wave_form_y, sampling_rate = librosa.load(file_path, mono=True, sr=None) 
-        print("------------- Loading Audio File with Librosa... -------------")
-        print(" - Wave Form = ", wave_form_y)
-        print(" - Sampling Rate = ", sampling_rate)
+        wave_form_y, sampling_rate = librosa.load(file_path, mono=True, sr=None)
         
         features = {}
         
@@ -47,3 +44,29 @@ def extract_features(file_path):
     except Exception as e:
         print(f"Erro ao processar {file_path}: {e}")
         return None
+    
+def get_column_names():
+    """Gera uma lista de nomes de colunas na ordem correta da extração."""
+    column_names = []
+    
+    n_mfcc = 20
+    n_contrast = 7
+    n_chroma = 12
+    
+    # 1. MFCC Mean & Std
+    column_names.extend([f'mfcc_mean_{i+1:02d}' for i in range(n_mfcc)])
+    column_names.extend([f'mfcc_std_{i+1:02d}' for i in range(n_mfcc)])
+    
+    # 2. Spectral Contrast Mean & Std
+    column_names.extend([f'contrast_mean_{i+1:02d}' for i in range(n_contrast)])
+    column_names.extend([f'contrast_std_{i+1:02d}' for i in range(n_contrast)])
+    
+    # 3. Chroma Mean & Std
+    column_names.extend([f'chroma_mean_{i+1:02d}' for i in range(n_chroma)])
+    column_names.extend([f'chroma_std_{i+1:02d}' for i in range(n_chroma)])
+    
+    # 4. ZCR Mean & Std
+    column_names.append('zcr_mean_01')
+    column_names.append('zcr_std_01')
+    
+    return column_names

@@ -6,7 +6,7 @@ import pandas as pd
 
 # Path to the FMA metadata and audio files
 METADATA_DIR = 'fma_metadata'  # Folder which has the tracks.csv file (248.4 MB), which lists all the FMA Dataset tracks into columns. The track files in the chosen AUDIO_DIR will be rearrenged according to their genres in tracks.csv
-AUDIO_DIR = 'fma_small'       # Select the desired dataset of tracks from FMA. They may be: fma_small | fma_medium | fma_large | fma_full
+AUDIO_DIR = 'fma_datasets/fma_small'       # Select the desired dataset of tracks from FMA. They may be: fma_small | fma_medium | fma_large | fma_full
 
 def load_tracks(filepath):
     """Loads the tracks metadata from a CSV file."""
