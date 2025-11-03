@@ -6,6 +6,7 @@ fma_datasets
 
 # FMA Metadata
 fma_metadata
+preprocessed_features
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
