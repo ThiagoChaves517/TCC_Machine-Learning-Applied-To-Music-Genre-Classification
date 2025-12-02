@@ -4,6 +4,9 @@
 # FMA Datasets
 fma_datasets
 
+# GTZAN Dataset
+gtzan_dataset
+
 # FMA Metadata
 fma_metadata
 preprocessed_features
